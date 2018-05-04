@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TestOthers</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main_activity_12">MainActivity_12</string>
+    <string name="meta_data_activity">您好， 我是Derik， 请多指教！ 这是一个Activity meta-data数据。</string>
+    <string name="meta_data_app">您好， 我是Derik， 请多指教！ 这是一个Application meta-data数据。</string>
+    <string name="meta_data_service">您好， 我是Derik， 请多指教！ 这是一个Service meta-data数据。</string>
+    <string name="meta_data_receiver">您好， 我是Derik， 请多指教！ 这是一个Receiver meta-data数据。</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+</resources>

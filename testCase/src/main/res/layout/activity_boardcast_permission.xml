@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ShadowColor, ShadowDx, ShadowDy, ShadowRadius, autoLink, liping16688@yeah.net"
+        android:shadowColor="#007500"
+        android:shadowDx="10.0"
+        android:shadowDy="8.0"
+        android:shadowRadius="3.0"
+        android:textSize="16sp"
+        android:autoLink="email"/>
+    <Button
+        android:id="@+id/boardcast_no_permisson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="boardcast_no_permisson" />
+
+    <Button
+        android:id="@+id/boardcast_with_permisson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="boardcast_with_permisson" />
+    
+    <Button
+        android:id="@+id/finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="finish" />
+    
+    <com.derik.demo.others.MyView
+        android:id="@+id/myview"
+        android:layout_width="200px"
+        android:layout_height="200px" />
+
+</LinearLayout>

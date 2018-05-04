@@ -1,0 +1,9 @@
+<resources>
+
+    <string-array name="array1">
+        <item>程序管理</item>
+        <item>邮件设置</item>
+        <item>保密设置</item>
+    </string-array>
+
+</resources>

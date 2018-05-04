@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="defStyleAttr" format="reference"/> //不使用styleable的属性
+    <attr name="toolbar" format="reference"/>  //toolbar使用的属性
+    <declare-styleable name="MyTextView">
+        <attr name="textColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="backColor" format="color"/>
+        <attr name="text" format="string"/>
+    </declare-styleable>
+</resources>

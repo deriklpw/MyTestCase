@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_weight"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.derik.myapps.component.WeightActivity">
+
+    <LinearLayout
+        android:id="@+id/first"
+        android:orientation="vertical"
+        app:layout_heightPercent="50%"
+        app:layout_widthPercent="100%">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="a_button1"
+            android:onClick="play"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:text="a_button2"
+            android:onClick="play"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:text="a_button3"
+            android:onClick="play"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/second"
+        android:layout_below="@+id/first"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="btn1"
+            android:onClick="play"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="btn2"
+            android:onClick="play"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="btn3"
+            android:onClick="play"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+    </LinearLayout>
+
+
+</android.support.percent.PercentRelativeLayout>

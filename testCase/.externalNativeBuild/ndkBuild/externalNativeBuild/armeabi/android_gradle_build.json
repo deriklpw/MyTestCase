@@ -1,0 +1,45 @@
+{
+  "buildFiles": [
+    "/home/derik/studio_workspace/MyTestCase/testCase/src/main/jni/Android.mk"
+  ],
+  "cleanCommands": [
+    "/home/derik/installed/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/home/derik/studio_workspace/MyTestCase/testCase/src/main/jni/Android.mk APP_ABI\u003darmeabi NDK_ALL_ABIS\u003darmeabi NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-19 NDK_OUT\u003d/home/derik/studio_workspace/MyTestCase/testCase/build/intermediates/ndkBuild/externalNativeBuild/obj NDK_LIBS_OUT\u003d/home/derik/studio_workspace/MyTestCase/testCase/build/intermediates/ndkBuild/externalNativeBuild/lib clean"
+  ],
+  "libraries": {
+    "JniTest-externalNativeBuild-armeabi": {
+      "buildCommand": "/home/derik/installed/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/home/derik/studio_workspace/MyTestCase/testCase/src/main/jni/Android.mk APP_ABI\u003darmeabi NDK_ALL_ABIS\u003darmeabi NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-19 NDK_OUT\u003d/home/derik/studio_workspace/MyTestCase/testCase/build/intermediates/ndkBuild/externalNativeBuild/obj NDK_LIBS_OUT\u003d/home/derik/studio_workspace/MyTestCase/testCase/build/intermediates/ndkBuild/externalNativeBuild/lib /home/derik/studio_workspace/MyTestCase/testCase/build/intermediates/ndkBuild/externalNativeBuild/obj/local/armeabi/libJniTest.so",
+      "toolchain": "toolchain-armeabi",
+      "abi": "armeabi",
+      "artifactName": "JniTest",
+      "files": [
+        {
+          "src": "/home/derik/studio_workspace/MyTestCase/testCase/src/main/jni/JniTest.cpp",
+          "flags": "\"-gcc-toolchain\" \"/home/derik/installed/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64\" \"-fpic\" \"-ffunction-sections\" \"-funwind-tables\" \"-fstack-protector-strong\" \"-Wno-invalid-command-line-argument\" \"-Wno-unused-command-line-argument\" \"-no-canonical-prefixes\" \"-fno-integrated-as\" \"-g\" \"-target\" \"armv5te-none-linux-androideabi19\" \"-march\u003darmv5te\" \"-mtune\u003dxscale\" \"-msoft-float\" \"-fno-exceptions\" \"-fno-rtti\" \"-mthumb\" \"-Os\" \"-DNDEBUG\" \"-I/home/derik/installed/sdk/ndk-bundle/sources/cxx-stl/system/include\" \"-I/home/derik/studio_workspace/MyTestCase/testCase/src/main/jni\" \"-DANDROID\" \"-D__ANDROID_API__\u003d19\" \"-Wa,--noexecstack\" \"-Wformat\" \"-Werror\u003dformat-security\" \"--sysroot\" \"/home/derik/installed/sdk/ndk-bundle/sysroot\" \"-isystem\" \"/home/derik/installed/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi\""
+        }
+      ],
+      "output": "/home/derik/studio_workspace/MyTestCase/testCase/build/intermediates/ndkBuild/externalNativeBuild/obj/local/armeabi/libJniTest.so"
+    },
+    "MyJniClass-externalNativeBuild-armeabi": {
+      "buildCommand": "/home/derik/installed/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/home/derik/studio_workspace/MyTestCase/testCase/src/main/jni/Android.mk APP_ABI\u003darmeabi NDK_ALL_ABIS\u003darmeabi NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-19 NDK_OUT\u003d/home/derik/studio_workspace/MyTestCase/testCase/build/intermediates/ndkBuild/externalNativeBuild/obj NDK_LIBS_OUT\u003d/home/derik/studio_workspace/MyTestCase/testCase/build/intermediates/ndkBuild/externalNativeBuild/lib /home/derik/studio_workspace/MyTestCase/testCase/build/intermediates/ndkBuild/externalNativeBuild/obj/local/armeabi/libMyJniClass.so",
+      "toolchain": "toolchain-armeabi",
+      "abi": "armeabi",
+      "artifactName": "MyJniClass",
+      "files": [
+        {
+          "src": "/home/derik/studio_workspace/MyTestCase/testCase/src/main/jni/MyJniClass.cpp",
+          "flags": "\"-gcc-toolchain\" \"/home/derik/installed/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64\" \"-fpic\" \"-ffunction-sections\" \"-funwind-tables\" \"-fstack-protector-strong\" \"-Wno-invalid-command-line-argument\" \"-Wno-unused-command-line-argument\" \"-no-canonical-prefixes\" \"-fno-integrated-as\" \"-g\" \"-target\" \"armv5te-none-linux-androideabi19\" \"-march\u003darmv5te\" \"-mtune\u003dxscale\" \"-msoft-float\" \"-fno-exceptions\" \"-fno-rtti\" \"-mthumb\" \"-Os\" \"-DNDEBUG\" \"-I/home/derik/installed/sdk/ndk-bundle/sources/cxx-stl/system/include\" \"-I/home/derik/studio_workspace/MyTestCase/testCase/src/main/jni\" \"-DANDROID\" \"-D__ANDROID_API__\u003d19\" \"-Wa,--noexecstack\" \"-Wformat\" \"-Werror\u003dformat-security\" \"--sysroot\" \"/home/derik/installed/sdk/ndk-bundle/sysroot\" \"-isystem\" \"/home/derik/installed/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi\""
+        }
+      ],
+      "output": "/home/derik/studio_workspace/MyTestCase/testCase/build/intermediates/ndkBuild/externalNativeBuild/obj/local/armeabi/libMyJniClass.so"
+    }
+  },
+  "toolchains": {
+    "toolchain-armeabi": {
+      "cppCompilerExecutable": "/home/derik/installed/sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

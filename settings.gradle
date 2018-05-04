@@ -1,0 +1,5 @@
+include ':mediaAPP', ':screenAPP', ':testCase', ':mylibrary', ':myapps', ':app'
+println "settings"
+println "rootDir: " + rootDir.getAbsolutePath()
+println "rootProject: " + rootProject.getProjectDir().getAbsolutePath()
+println "getGradleHomeDir: " + gradle.getGradleHomeDir().getAbsolutePath()

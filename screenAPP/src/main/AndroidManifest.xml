@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.screenapp" >
+    
+    <!-- 本应用添加该权限后, 其中的组件才可以接受带有这个权限的广播 -->
+    <uses-permission android:name="com.android.mypermission.receiver" />
+    
+    <!-- 自定义权限, 并在组件中声明, 对方应用需要uses-permission 该权限, 本组件才会接受对方发的广播 -->
+    <permission android:name="com.android.mypermission.send"
+        android:icon="@drawable/ic_launcher"
+        android:protectionLevel="signatureOrSystem" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/myAppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".MonitorService" >
+        </service>
+        
+        <service android:name=".BindServiceTest" >
+        </service>
+        
+        <service android:name=".IntentServiceTest" >
+        </service>
+
+        <activity
+            android:name=".SharedPreferencesConfActivity"
+            android:configChanges="orientation|screenSize" >
+        </activity>
+        <activity android:name=".ViewFlipperActivity" >
+        </activity>
+        <activity android:name=".TestCaseActivity" >
+        </activity>
+        <activity android:name=".SpinnerActivity" >
+        </activity>
+        <activity
+            android:name=".ProgressBarActivity"
+            android:theme="@android:style/Theme.Holo" >
+        </activity>
+        <activity android:name=".MenuActivity" >
+        </activity>
+        <activity android:name=".IcareUActivity" >
+        </activity>
+
+        <activity android:name=".CircleActivity" >
+        </activity>
+        <activity android:name="com.example.fragment.BookActivity" >
+        </activity>
+        <activity android:name=".AnimationActivity" >
+        </activity>
+        <activity android:name=".VideoActivity" >
+        </activity>
+        <activity android:name=".AnimatorActivity" >
+        </activity>
+        <activity android:name=".MyContentResolver" >
+        </activity>
+        
+        <activity android:name=".MyBindActivity" >
+        </activity>
+        
+        <receiver android:name=".AllBroadcastReceiver"
+            android:permission="com.android.mypermission.send" >
+            <intent-filter>
+                <action android:name="android.all" />
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </receiver>
+    </application>
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+</manifest>

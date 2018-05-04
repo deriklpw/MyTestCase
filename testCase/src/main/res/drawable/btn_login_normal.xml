@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?><!-- shape 还有android:shape="矩形 rectangle | 椭圆 oval | 线 line | 环 ring" -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 定义使用单种颜色填充, 包围区域 -->
+    <solid
+        android:color="#DD66CDAA" />
+
+    <!-- 几何图形的边框绘制 -->
+    <stroke
+        android:width="10px"
+        android:color="#DD66CD"
+        android:dashGap="10dp"
+        android:dashWidth="10dp" />
+
+    <!-- 定义几何形状的内边距 -->
+    <padding
+        android:left="15dp"
+        android:right="15dp" />
+
+    <!-- 定义几何图形的四个角的弧度 -->
+    <corners android:radius="15dp" />
+
+    <!-- 定义几何图形的大小，实际占用超过时，以实际占用为准 -->
+    <size
+        android:width="300dp"
+        android:height="50dp"
+        android:color="#0000FF"
+        android:dashGap="20dp"
+        android:dashWidth="20dp" />
+
+    <!-- 定义使用渐变颜色填充包围区域，同solid -->
+    <!-- android:angle，linear 时有效， android:centerX sweep 有效-->
+    <gradient
+        android:angle="45"
+        android:centerColor="#DDAACC"
+        android:centerX="50%"
+        android:centerY="0.5"
+        android:endColor="#BBCCEE"
+        android:startColor="#EEFFAA"
+        android:type="linear"
+        android:useLevel="false" />
+
+</shape>

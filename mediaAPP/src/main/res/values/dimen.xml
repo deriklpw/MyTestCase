@@ -1,0 +1,7 @@
+<resources>
+
+    <dimen name="small">15sp</dimen>
+    <dimen name="title">35sp</dimen>
+    <dimen name="basic">24px</dimen>
+
+</resources>

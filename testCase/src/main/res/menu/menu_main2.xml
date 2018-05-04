@@ -1,0 +1,45 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.derik.demo.c_third.viewpager.TabbedTestActivity">
+    <item
+        android:id="@+id/head_menu1"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="setting1">
+
+        <menu>
+            <group
+                android:checkableBehavior="none">
+            <item
+                android:id="@+id/menu_icon"
+                android:title="photo">
+
+            </item>
+            <item
+                android:id="@+id/menu_name"
+                android:title="name">
+
+            </item>
+            <item
+                android:id="@+id/menu_sex"
+                android:title="sex">
+
+            </item>
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/head_menu2"
+        android:orderInCategory="100"
+        android:title="setting2">
+
+    </item>
+    <item
+        android:id="@+id/head_menu3"
+        android:orderInCategory="100"
+        android:title="setting3">
+
+    </item>
+
+</menu>

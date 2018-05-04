@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="items">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+    </string-array>
+
+    <string-array name="details">
+        <item>"A: details"</item>
+        <item>"B: details"</item>
+        <item>"C: details"</item>
+        <item>"D: details"</item>
+        <item>"E: details"</item>
+        <item>"F: details"</item>
+        <item>"G: details"</item>
+        <item>"H: details"</item>
+    </string-array>
+</resources>

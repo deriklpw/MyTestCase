@@ -1,0 +1,81 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- 主题中定义的自定义属性值 -->
+        <item name="textColor">@color/colorAccent</item>
+        <item name="textSize">30sp</item>
+        <item name="backColor">@color/colorPrimary</item>
+        <item name="text">你好世界(in Theme)</item>
+        <!-- 主题中定义的引用(style，含自定义属性值) -->
+        <item name="defStyleAttr">@style/defStyleAttr2</item>
+
+    </style>
+
+    <!-- 布局文件style属性直接使用style -->
+    <style name="myStyle">
+        <item name="textColor">@color/colorAccent</item>
+        <item name="textSize">30sp</item>
+        <item name="backColor">@color/colorPrimary</item>
+        <item name="text">(in .xml style)</item>
+    </style>
+
+    <!-- attr引用间接使用的style/透过theme中的item(即自定义引用属性名)，指向的style -->
+    <style name="defStyleAttr2">
+        <item name="textColor">@color/colorAccent</item>
+        <item name="textSize">30sp</item>
+        <item name="backColor">@color/colorPrimary</item>
+        <item name="text">(in defStyleAttr)</item>
+    </style>
+
+    <!-- defStyleRes指定的style -->
+    <style name="defStyleRes">
+        <item name="textColor">@color/colorAccent</item>
+        <item name="textSize">30sp</item>
+        <item name="backColor">@color/colorPrimary</item>
+        <item name="text">(in defStyleRes)</item>
+    </style>
+
+    <style name="TextLabel" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorControlActivated">#FFCC00</item>
+    </style>
+
+
+    <!-- toolbar 控件style -->
+    <style name="AppTheme.Base" parent="Theme.AppCompat">
+        <item name="windowActionBar">false</item>
+        <!-- 使用 API Level 22 编译的话，要拿掉前缀字android -->
+        <item name="windowNoTitle">true</item>
+
+        <!-- 指定toolbar背景色，自定义引用属性，也可直接xml布局中background指定颜色 -->
+        <item name="toolbar">@color/colorPrimary</item>
+        <!-- Status bar color -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- Window color -->
+        <item name="android:windowBackground">@color/colorAccent</item>
+
+        <!--<item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>-->
+
+    </style>
+
+    <style name="OverflowMenuStyle" parent="@style/Widget.AppCompat.PopupMenu.Overflow">
+        <!-- 是否覆盖锚点，默认为true，即盖住Toolbar -->
+        <item name="overlapAnchor">false</item>
+        <!--<item name="android:dropDownWidth">wrap_content</item>-->
+        <!-- 弹出层背景颜色 -->
+        <item name="android:popupBackground">#DBDCADEF</item>
+        <!-- 弹出层垂直方向上的偏移，即在竖直方向上距离Toolbar的距离，值为负则会盖住Toolbar -->
+        <item name="android:dropDownVerticalOffset">8dp</item>
+        <!-- 弹出层水平方向上的偏移，即距离屏幕左边的距离，负值会导致右边出现空隙 -->
+        <item name="android:dropDownHorizontalOffset">8dp</item>
+        <!-- 设置弹出菜单文字颜色 -->
+        <item name="android:textColor">#000000</item>
+    </style>
+
+</resources>

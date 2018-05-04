@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string-array name="books">
+     <item>《飘》</item>
+     <item>《钢铁是怎样练成的》</item>
+     <item>《孙子兵法》</item>
+     <item>《儒林外史》</item>
+     <item>《其实你不懂货币战争》</item>
+     <item>《三字经》</item>
+     <item>《菜根谭》</item>
+     <item>《围炉夜话》</item>
+     <item>《一千零一夜》</item>
+     <item>《偷影子的人》</item>
+ </string-array>
+
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 在不同的values下建立资源引用文件，name相同，可以为不同屏幕尺寸自动配置对应的布局（单双屏）-->
+    <item name="layout_main" type="layout">@layout/activity_first_group</item>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_toolbar_test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.derik.myapps.component.ToolbarMenuActivity">
+
+    <!--
+    android:background="@color/darkturquoise" //设置Toolbar的背景色
+    app:titleTextColor="@color/white"		  //设置标题颜色
+    app:navigationIcon="@drawable/back"		  //设置左边按钮图标
+    app:popupTheme="@style/OverflowMenuStyle  //设置弹出菜单的风格 -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_my_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/toolbar"
+        android:layout_marginBottom="20dp"
+        app:popupTheme="@style/OverflowMenuStyle"/>
+
+    <TextView
+        android:id="@+id/toolbar_my_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="context menu"
+        android:layout_below="@+id/toolbar_my_bar"/>
+    <TextView
+        android:id="@+id/toolbar_my_popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="popup menu"
+        android:layout_below="@+id/toolbar_my_bar"/>
+
+</RelativeLayout>

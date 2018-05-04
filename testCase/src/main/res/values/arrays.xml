@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="books">
+        <item>一千零一夜</item>
+        <item>安徒生童话</item>
+        <item>麦田守望者</item>
+        <item>偷影子的人</item>
+        <item>钢铁是怎样练成的</item>
+        <item>诛仙</item>
+        <item>中华五千年</item>
+        <item>货币的战争</item>
+        <item>儒林外史</item>
+        <item>叩响命运的门</item>
+        <item>abc</item>
+        <item>abcd</item>
+        <item>abcde</item>
+        <item>abcdef</item>
+        <item>abcdefg</item>
+    </string-array>
+</resources>

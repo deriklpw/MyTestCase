@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ScreenAPP</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="help">帮助</string>
+    <string name="about">" "关\n" "于</string>
+    <string name="setting">设置</string>
+    <string name="tip">小\n百\n科</string>
+
+</resources>

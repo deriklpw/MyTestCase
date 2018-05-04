@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.derik.demo"
+    android:sharedUserId="com.derik.demo.main">
+
+    <!-- 添加接收方属性中要求的权限后，才可以给对方发送广播 -->
+    <uses-permission android:name="com.android.mypermission.send" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 创建桌面快捷方式的权限 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- 自定义权限, 发送广播时附带此权限后，只有对方添加该权限才有权利接受此广播。对方未添加此权限，不影响非附带权限广播的接受 -->
+    <permission
+        android:name="com.android.mypermission.receiver"
+        android:protectionLevel="normal" />
+
+    <!-- 多渠道打包时使用 -->
+    <!-- <meta-data android:name="CHANNEL" android:value="${CHANNEL_VALUE}" /> -->
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FirstTestCaseActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".SecondTestCaseActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ThirdTestCaseActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ForthTestCaseActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".a_first.sqlite.SQLiteActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".a_first.filesharepre.SharePreferencesFileActivity"
+            android:label="@string/app_name" />
+
+        <provider
+            android:name=".a_first.contentprovide.MyContentProvider"
+            android:authorities="org.foxconn.provider.first"
+            android:exported="true" />
+
+        <activity
+            android:name=".a_first.attribute.AttributeTest"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".b_second.url.HttpURLTest"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".a_first.fragment.FragmentTestMain"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".a_first.DrawableTest"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".a_first.gesture.GestureTestActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".b_second.socket.ClientActivity"
+            android:label="@string/app_name" />
+
+        <service android:name=".b_second.socket.MyService" />
+
+        <!-- <activity -->
+        <!-- android:name=".b_second.httpclient.HttpClientTest" -->
+        <!-- android:label="@string/app_name" /> -->
+        <activity
+            android:name=".b_second.WebViewTest"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".b_second.DesktopTest"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".others.JavaCodeDefViewActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.myaction1" />
+                <action android:name="android.intent.action.myaction2" />
+
+                <category android:name="android.intent.category.mycategory1" />
+                <category android:name="android.intent.category.mycategory2" />
+
+                <data
+                    android:host="192.168.0.100"
+                    android:mimeType="application/json"
+                    android:scheme="http" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".others.BroadcastPermissionActivity"
+            android:label="@string/app_name" />
+        <activity android:name=".a_first.install_tts.SystemVideo" />
+        <activity android:name=".a_first.soundpool.SoundPoolTest" />
+        <activity android:name=".a_first.gesture.GestureAddActivity" />
+        <activity android:name=".b_second.url.URLTest" />
+
+        <service
+            android:name=".b_second.AIDLService"
+            android:exported="true"
+            android:process="com.derik.demo.aidlService">
+            <intent-filter>
+                <action android:name="com.derik.demo.action" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.derik.demo.meta_data_service"
+                android:resource="@string/meta_data_service" />
+        </service>
+
+        <activity android:name=".b_second.AIDLActivity" />
+        <activity android:name=".b_second.camera.CameraTest" />
+        <activity android:name=".b_second.camera.ScreenCaptureActivity" />
+        <activity android:name=".c_third.RenameTestActivity" />
+        <activity
+            android:name=".c_third.component.AutoCompleteTextViewTest"/>
+        <activity android:name=".c_third.MetaDataTestActivity">
+            <meta-data
+                android:name="com.derik.demo.meta_data_activity"
+                android:resource="@string/meta_data_activity" />
+        </activity>
+
+        <meta-data
+            android:name="com.derik.demo.meta_data_app"
+            android:resource="@string/meta_data_app" />
+
+        <activity android:name=".c_third.serialparcel.SerialParcelActivity" />
+        <activity android:name=".c_third.regular.RegularTestActivity" />
+        <activity android:name=".c_third.viewpager.ViewPagerTabStripActivity" />
+        <activity
+            android:name=".c_third.viewpager.TabbedTestActivity"
+            android:label="@string/title_activity_main2" />
+        <activity android:name=".c_third.viewpager.TabHostActivity" />
+        <activity android:name=".c_third.sensor.SensorTestActivity" />
+        <activity android:name=".c_third.jnitest.JniTestActivity" />
+        <activity android:name=".c_third.resource.ResourceTestActivity" />
+        <activity android:name=".c_third.resource.MenuTestActivity" />
+        <activity android:name=".c_third.graph.GraphTestActivity" />
+        <activity android:name=".b_second.Async.AsyncTaskTestActivity" />
+        <activity android:name=".PercentLayoutActivity" />
+    </application>
+
+</manifest>
