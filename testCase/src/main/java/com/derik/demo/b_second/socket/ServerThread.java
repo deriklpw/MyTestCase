@@ -2,7 +2,6 @@ package com.derik.demo.b_second.socket;
 
 
 import android.util.Log;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,13 +12,13 @@ import java.util.Iterator;
 
 public class ServerThread implements Runnable {
 
-    Socket s = null;
+    Socket socket = null;
     BufferedReader br = null;
 
-    public ServerThread(Socket s) throws IOException {
+    public ServerThread(Socket socket) throws IOException {
         // TODO Auto-generated constructor stub
-        this.s = s;
-        br = new BufferedReader(new InputStreamReader(s.getInputStream(), "utf-8"));
+        this.socket = socket;
+        br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "utf-8"));
     }
 
     @Override
@@ -51,7 +50,6 @@ public class ServerThread implements Runnable {
         }
     }
 
-
     private String readFromClient() {
         try {
 
@@ -60,7 +58,7 @@ public class ServerThread implements Runnable {
         } catch (IOException e) {
             // TODO: handle exception
             e.printStackTrace();
-            MyServer.socketList.remove(s);
+            MyServer.socketList.remove(socket);
         }
         return null;
     }

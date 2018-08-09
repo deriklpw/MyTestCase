@@ -8,33 +8,35 @@ import java.util.ArrayList;
 
 public class MyServer {
 
-	public static ArrayList<Socket> socketList = new ArrayList<>();
-	public static boolean isClose = false;
+    public static ArrayList<Socket> socketList = new ArrayList<>();
+    public static boolean isClose = false;
 
-	public static void startServer() {
-		try {
-		
-			ServerSocket ss = new ServerSocket(30000);
-			while (true) {
-				System.out.println("ready...");
-				Socket s = ss.accept();
-				System.out.println("connected:");
-				socketList.add(s);
-				Log.i("socket size",""+socketList.size());
-				new Thread(new ServerThread(s)).start();
+    public static void startServer() {
+        try {
+            ServerSocket ss = new ServerSocket(0);
+            while (true) {
+                System.out.println("ready...");
+                Socket s = ss.accept();
+                System.out.println("connected:");
+                socketList.add(s);
+                Log.i("socket size", "" + socketList.size());
+                new Thread(new ServerThread(s)).start();
 
-				if (isClose) {
-					s.close();
-					ss.close();
-					break;
-				}
+                if (isClose) {
+                    s.close();
+                    ss.close();
+                    break;
+                }
+            }
 
-			}
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+    }
 
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-	}
+    public static void shutdown() {
+        isClose = true;
+    }
 
 }

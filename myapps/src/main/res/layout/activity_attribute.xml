@@ -14,7 +14,6 @@
         app:backColor="#CCDD00"
         app:text="Hello My Text View. In xml"
         app:textColor="#DC4512"
-        app:textSize="18sp"
-        />
+        app:textSize="18sp" />
 
 </RelativeLayout>

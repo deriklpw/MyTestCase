@@ -1,5 +1,6 @@
 package com.derik.demo.b_second.socket;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class ClientActivity extends Activity {
     Button stop;
     private Intent intent;
 
+    @SuppressLint("HandlerLeak")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

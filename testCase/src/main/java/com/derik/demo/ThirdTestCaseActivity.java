@@ -31,6 +31,8 @@ import com.derik.demo.c_third.viewpager.TabbedTestActivity;
 import com.derik.demo.c_third.viewpager.TabHostActivity;
 import com.derik.demo.c_third.viewpager.ViewPagerTabStripActivity;
 import com.derik.demo.tools.MsgToast;
+import com.derik.demo.tools.PrefUtils;
+import com.derik.demo.tools.SDCardTest;
 import com.fcl.mylibrary.UserInfo;
 
 public class ThirdTestCaseActivity extends Activity {

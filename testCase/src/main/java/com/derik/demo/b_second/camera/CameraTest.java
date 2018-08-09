@@ -1,7 +1,9 @@
 package com.derik.demo.b_second.camera;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.ImageFormat;
 import android.graphics.SurfaceTexture;
@@ -17,6 +19,7 @@ import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
@@ -156,6 +159,16 @@ public class CameraTest extends Activity {
         CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
 
         try {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
             cameraManager.openCamera("0", stateCallback, null);
         } catch (CameraAccessException e) {
             e.printStackTrace();

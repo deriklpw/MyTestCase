@@ -36,7 +36,7 @@ public class MyTextView extends View {
         // styleable，则帮助将所有自定义的资源的id组合成数组(非styleable组织的属性，需要手动初始化为数组)
 
         // 注意事项三：四种obtainStyledAttributes方法
-        // 1. obtainStyledAttributes (int[] attrs)， 此attrs非构造函数中attrs，构造函数中attrs未使用
+        // 1. obtainStyledAttributes (int[] attrs)， 此attrs非构造函数中的attrs，构造函数中attrs未使用
         // 取值来源：从Resources.Theme中的style中读取R.styleable.MyTextView数组中各项对应的值
         // TypedArray typedArray = context.getTheme().obtainStyledAttributes(R.styleable.MyTextView);
 

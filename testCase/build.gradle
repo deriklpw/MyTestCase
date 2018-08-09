@@ -66,6 +66,7 @@ dependencies {
     compile "com.android.support:support-v4:$rootProject.supportLibraryVersion"
     compile "com.android.support:support-v13:$rootProject.supportLibraryVersion"
     compile "com.android.support:percent:$rootProject.supportLibraryVersion"
+    compile 'com.google.code.gson:gson:2.8.2'
 }
 
 println "testCase build.gradle."

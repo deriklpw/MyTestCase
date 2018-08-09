@@ -28,7 +28,7 @@ println "MyTestCase"
 ext {
     // Sdk and tools
     // Support library and architecture components support minSdk 14 and above.
-    minSdkVersion = 19
+    minSdkVersion = 21
     targetSdkVersion = 26
     compileSdkVersion = 26
     buildToolsVersion = '27.0.3'
