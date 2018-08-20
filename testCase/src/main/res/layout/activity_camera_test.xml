@@ -7,9 +7,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.derik.demo.b_second.camera.CameraTest">
+    tools:context=".media.camera.CameraTestActivity">
 
-    <com.derik.demo.b_second.camera.view.AutoFIlTextureView
+    <com.derik.demo.media.camera.view.AutoFIlTextureView
         android:id="@+id/texture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

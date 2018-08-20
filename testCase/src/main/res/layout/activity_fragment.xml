@@ -6,14 +6,14 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <fragment
-        android:name="com.derik.demo.a_first.fragment.MyListFragment"
+        android:name="com.derik.demo.views.fragment.MyListFragment"
         android:id="@+id/fragment1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" >
     </fragment>
     <fragment
-        android:name="com.derik.demo.a_first.fragment.MyListFragment2"
+        android:name="com.derik.demo.views.fragment.MyListFragment2"
         android:id="@+id/fragment2"
         android:layout_width="0dp"
         android:layout_height="match_parent"

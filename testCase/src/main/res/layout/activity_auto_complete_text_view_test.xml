@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.derik.demo.c_third.component.AutoCompleteTextViewTest">
+    tools:context="com.derik.demo.views.component.AutoCompleteTextViewTest">
     <AutoCompleteTextView
         android:id="@+id/auto_complete_text_view"
         android:layout_width="match_parent"

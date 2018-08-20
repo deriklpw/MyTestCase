@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.derik.demo.b_second.url.URLTest">
+    tools:context="com.derik.demo.net.url.URLTestActivity">
 
     <EditText
         android:id="@+id/url_test_input"
@@ -23,13 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="get" />
-
-    <Button
-        android:id="@+id/url_test_post"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="post" />
 
     <ImageView
         android:id="@+id/url_test_image"

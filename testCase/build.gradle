@@ -62,17 +62,20 @@ android {
 }
 
 dependencies {
-    compile files('libs/mysdk.jar')
-    compile "com.android.support:support-v4:$rootProject.supportLibraryVersion"
-    compile "com.android.support:support-v13:$rootProject.supportLibraryVersion"
-    compile "com.android.support:percent:$rootProject.supportLibraryVersion"
-    compile 'com.google.code.gson:gson:2.8.2'
+    implementation files('libs/mysdk.jar')
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-v13:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:percent:$rootProject.supportLibraryVersion"
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.layoutVersion"
+    implementation 'com.github.deriklpw:library:0abd8ba9b0'
+    implementation 'com.orhanobut:logger:1.15'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
 }
 
 println "testCase build.gradle."
 // load plugin
-apply from:project.getRootDir().getAbsolutePath() + "/utils.gradle"
-
-
-
-
+apply from: project.getRootDir().getAbsolutePath() + "/utils.gradle"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     
-    <com.derik.demo.a_first.attribute.AlphaImageView
+    <com.derik.demo.views.attribute.AlphaImageView
         android:id="@+id/alpha_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

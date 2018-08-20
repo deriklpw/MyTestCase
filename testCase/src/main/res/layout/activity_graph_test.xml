@@ -8,9 +8,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.derik.demo.c_third.graph.GraphTestActivity">
+    tools:context="com.derik.demo.views.graph.GraphTestActivity">
 
-    <com.derik.demo.c_third.graph.view.DrawArc
+    <com.derik.demo.views.graph.view.DrawArc
         android:id="@+id/draw_arc"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
