@@ -134,7 +134,6 @@
         <activity android:name=".net.AIDLActivity" />
         <activity android:name=".media.camera.CameraTestActivity" />
         <activity android:name=".media.camera.ScreenCaptureActivity" />
-        <activity android:name=".views.RenameTestActivity" />
         <activity android:name=".views.component.AutoCompleteTextViewTest" />
         <activity android:name=".views.MetaDataTestActivity">
             <meta-data
@@ -158,11 +157,12 @@
         <activity android:name=".views.resource.ResourceTestActivity" />
         <activity android:name=".views.resource.MenuTestActivity" />
         <activity android:name=".views.graph.GraphTestActivity" />
-        <activity android:name=".net.Async.AsyncTaskTestActivity" />
+        <activity android:name=".net.async.AsyncTaskTestActivity" />
         <activity android:name=".views.PercentLayoutActivity" />
         <activity android:name=".MultiMediaActivity" />
         <activity android:name=".others.MultiProcessActivity"
             android:process="multi.process"/>
+        <activity android:name=".NativesActivity" />
     </application>
 
 </manifest>

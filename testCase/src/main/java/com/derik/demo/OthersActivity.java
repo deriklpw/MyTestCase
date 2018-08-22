@@ -23,29 +23,54 @@ import com.derik.demo.media.soundpool.SoundUtils;
 import com.derik.demo.others.BroadcastPermissionActivity;
 import com.derik.demo.others.MultiProcessActivity;
 import com.derik.demo.tools.MessageDialog;
+import com.derik.demo.views.MetaDataTestActivity;
+import com.derik.demo.views.regular.RegularTestActivity;
+import com.derik.demo.views.resource.ResourceTestActivity;
+import com.derik.demo.views.serialparcel.ParcelableTest;
+import com.derik.demo.views.serialparcel.SerialParcelActivity;
+import com.derik.demo.views.serialparcel.SerializableTest;
 import com.derik.library.view.MsgToast;
+import com.fcl.mylibrary.UserInfo;
 
 public class OthersActivity extends Activity {
     private static final String TAG = "OthersActivity";
     private Intent targetIntent;
     private String msg;
-    private String[] targetNames = {"BroadcastPermission",
+    private String[] targetNames = new String[]{"BroadcastPermission",
             "Intent filter",
             "Dots",
             "Heap",
             "Finish",
             "SystemVideo",
             "MultiProcess",
-            "DeskTop"
+            "DeskTop",
+            "meta-data",
+            "Serializable & Parcelable",
+            "Regular Expression",
+            "Resource",
+            "111",
+            "222",
+            "333",
+            "444",
+            "555"
     };
-    private String[] targetDescs = {"broadcast permission Test",
+    private String[] targetDescs = new String[]{"broadcast permission Test",
             "Start activity by intent filter",
             "像素计算",
             "HeapSize",
             "Finish with result",
             "SystemVideo",
             "两个Activity不在一个进程中",
-            "桌面快捷方式"
+            "桌面快捷方式",
+            "meta-data测试",
+            "对象序列化传输示例",
+            "正则表达式示例",
+            "Xml",
+            "111",
+            "222",
+            "333",
+            "444",
+            "555"
     };
 
     public static boolean isChecked = false;
@@ -66,7 +91,7 @@ public class OthersActivity extends Activity {
         // 设置为垂直布局，这也是默认的
         layoutManager.setOrientation(OrientationHelper.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.addItemDecoration(new ItemDivider().setDividerColor(Color.GRAY).setDividerWith(2));
+        recyclerView.addItemDecoration(new ItemDividerHorizontal().setDividerColor(Color.GRAY).setDividerSize(2));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         adapter.setOnItemClickListener(new RecycleViewAdapter.OnItemClickListener() {
             @Override
@@ -126,13 +151,13 @@ public class OthersActivity extends Activity {
                         getScreenSizeOfDevice2();
                         break;
                     case 3:
-                        Runtime rt=Runtime.getRuntime();
-                        long maxMemory=rt.maxMemory();
+                        Runtime rt = Runtime.getRuntime();
+                        long maxMemory = rt.maxMemory();
 
-                        Log.i("heapTotalMemory:",Long.toString(rt.totalMemory()/(1024*1024))+"MB");
-                        Log.i("heapFreeMemory:",Long.toString(rt.freeMemory()/(1024*1024))+"MB");
-                        Log.i("heapMaxMemory:",Long.toString(maxMemory/(1024*1024))+"MB");
-                        MsgToast.show(OthersActivity.this, "heapSizeLimit:"+Long.toString(maxMemory/(1024*1024))+"MB");
+                        Log.i("heapTotalMemory:", Long.toString(rt.totalMemory() / (1024 * 1024)) + "MB");
+                        Log.i("heapFreeMemory:", Long.toString(rt.freeMemory() / (1024 * 1024)) + "MB");
+                        Log.i("heapMaxMemory:", Long.toString(maxMemory / (1024 * 1024)) + "MB");
+                        MsgToast.show(OthersActivity.this, "heapSizeLimit:" + Long.toString(maxMemory / (1024 * 1024)) + "MB");
                         break;
                     case 4:
                         MsgToast.show(OthersActivity.this, position + " id:" + position);
@@ -152,12 +177,44 @@ public class OthersActivity extends Activity {
                         startActivity(targetIntent);
                         break;
                     case 8:
+                        targetIntent = new Intent(OthersActivity.this, MetaDataTestActivity.class);
+                        startActivity(targetIntent);
                         break;
                     case 9:
+                        targetIntent = new Intent(OthersActivity.this, SerialParcelActivity.class);
+                        SerializableTest serializableTest = new SerializableTest();
+                        serializableTest.setId(3);
+                        serializableTest.setName("derik");
+                        serializableTest.setPassword("123456");
+
+                        ParcelableTest parcelableTest = new ParcelableTest();
+                        parcelableTest.setId(5);
+                        parcelableTest.setName("Lionel");
+                        parcelableTest.setPassword("qazwsx");
+
+                        //使用第三方库中的UserInfo类
+                        UserInfo user = new UserInfo();
+                        user.setId("1");
+                        user.setUserName("Derik");
+                        user.setPassword("123456");
+                        user.setSex("Man");
+                        user.setAge(29);
+                        user.setBirthday("0106");
+
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("serial", serializableTest);
+                        bundle.putParcelable("parcel", parcelableTest);
+                        bundle.putParcelable("user", user);
+                        targetIntent.putExtras(bundle);
+                        startActivity(targetIntent);
                         break;
                     case 10:
+                        targetIntent = new Intent(OthersActivity.this, RegularTestActivity.class);
+                        startActivity(targetIntent);
                         break;
                     case 11:
+                        targetIntent = new Intent(OthersActivity.this, ResourceTestActivity.class);
+                        startActivity(targetIntent);
                         break;
                     case 12:
                         break;

@@ -10,42 +10,27 @@ import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.derik.demo.media.camera.CameraTestActivity;
-import com.derik.demo.media.camera.ScreenCaptureActivity;
-import com.derik.demo.media.install_tts.SystemVideoActivity;
-import com.derik.demo.media.soundpool.SoundPoolTestActivity;
+import com.derik.demo.jni.JniTestActivity;
 
-public class MultiMediaActivity extends Activity {
+public class NativesActivity extends Activity {
 
-    private static final String TAG = "MultiMediaActivity";
+    private static final String TAG = "NativesActivity";
     private Intent targetIntent;
 
-    private String[] targetNames = new String[]{
-            "Camera",
-            "TTS",
-            "SoundPool",
-            "Camera",
-            "Capture picture"
+    private String[] targetNames = new String[] {
+            "JNI"
     };
-    private String[] targetDescs = new String[] {
-            "Camera Test",
-            "TTS Test",
-            "SoundPool Test",
-            "拍照",
-            "屏幕截图"
+    private String[] targetDescs = new String[]{
+            "JNI Test"
     };
-    private Class<?>[] targetsClasses = new Class[] {
-            CameraTestActivity.class,
-            SystemVideoActivity.class,
-            SoundPoolTestActivity.class,
-            CameraTestActivity.class,
-            ScreenCaptureActivity.class
+    private Class<?>[] targets = new Class[]{
+            JniTestActivity.class
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multi_media);
+        setContentView(R.layout.activity_natives);
         initViews();
     }
 
@@ -63,11 +48,9 @@ public class MultiMediaActivity extends Activity {
         adapter.setOnItemClickListener(new RecycleViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                targetIntent = new Intent(MultiMediaActivity.this, targetsClasses[position]);
+                targetIntent = new Intent(NativesActivity.this, targets[position]);
                 startActivity(targetIntent);
-
             }
         });
     }
-
 }

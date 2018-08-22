@@ -48,7 +48,10 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         holder.text1.setText(mNames[position]);
         holder.num.setText(String.valueOf(position));
         if (mDescs != null) {
+            holder.text2.setVisibility(View.VISIBLE);
             holder.text2.setText(mDescs[position]);
+        } else {
+            holder.text1.setTextSize(30);
         }
 
     }

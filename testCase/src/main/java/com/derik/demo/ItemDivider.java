@@ -34,7 +34,6 @@ public class ItemDivider extends RecyclerView.ItemDecoration {
     public ItemDivider setDividerWith(int dividerWith) {
         this.dividerWith = dividerWith;
         return this;
-
     }
 
     public ItemDivider setDividerColor(int color) {
@@ -93,7 +92,7 @@ public class ItemDivider extends RecyclerView.ItemDecoration {
         super.onDraw(c, parent, state);
         // 这个值是为了补偿横竖方向上分割线交叉处间隙
         int offSet = (int) Math.ceil(dividerWith * 1f / 2);
-        for (int i = 0; i < parent.getChildCount(); i++) {
+        for (int i = 0; i < parent.getChildCount()-1; i++) {
             View child = parent.getChildAt(i);
             RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
             int left1 = child.getRight() + params.rightMargin;

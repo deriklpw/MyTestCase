@@ -10,5 +10,5 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        layout="@layout/recycle_view_list"/>
+        layout="@layout/activity_recycle_view_list"/>
 </android.support.constraint.ConstraintLayout>

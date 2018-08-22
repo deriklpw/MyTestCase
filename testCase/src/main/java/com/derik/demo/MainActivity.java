@@ -9,12 +9,12 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 
+import com.derik.library.utils.Log;
 import com.derik.library.view.MsgToast;
 
 public class MainActivity extends Activity {
@@ -22,19 +22,21 @@ public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
     private Intent targetIntent;
     private ActionBar actionBar;
-    private String[] targetNames = {
+    private String[] targetNames = new String[]{
             "Storage",
             "Views",
             "MultiMedia",
             "Net",
-            "Others"
+            "Natives",
+            "Others",
     };
-    private Class<?>[] targets = {
+    private Class<?>[] targetClasses = new Class[]{
             StorageActivity.class,
             ViewsActivity.class,
             MultiMediaActivity.class,
             NetActivity.class,
-            OthersActivity.class
+            NativesActivity.class,
+            OthersActivity.class,
     };
 
     @Override
@@ -61,19 +63,21 @@ public class MainActivity extends Activity {
 
     private void initViews() {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
-        RecycleViewAdapter adapter = new RecycleViewAdapter(targetNames, null);
-        recyclerView.setAdapter(adapter);
+
         // 线性排列
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext());
         // 设置为垂直布局，这也是默认的
         layoutManager.setOrientation(OrientationHelper.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.addItemDecoration(new ItemDivider().setDividerColor(Color.GRAY).setDividerWith(2));
+        recyclerView.addItemDecoration(new ItemDividerHorizontal().setDividerColor(Color.GRAY).setDividerSize(2));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        RecycleViewAdapter adapter = new RecycleViewAdapter(targetNames, null);
+        recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new RecycleViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                targetIntent = new Intent(MainActivity.this, targets[position]);
+                targetIntent = new Intent(MainActivity.this, targetClasses[position]);
                 if (position == 0) {
                     startActivityForResult(targetIntent, 128);
                 } else {

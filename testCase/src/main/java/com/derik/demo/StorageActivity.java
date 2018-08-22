@@ -24,10 +24,9 @@ import com.derik.library.utils.BitmapTools;
 public class StorageActivity extends Activity {
 
     protected static final String TAG = "StorageActivity";
-    private ListView listView;
-    private String[] text1;
-    private String[] textString2;
-    private Intent intent;
+    private String[] targetNames;
+    private String[] targetDescs;
+    private Intent targetIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,19 +37,20 @@ public class StorageActivity extends Activity {
     }
 
     protected void initView() {
-        text1 = new String[]{
-                "SharePreferences/IO",
+        targetNames = new String[]{
+                "SharePreferences",
+                "File",
                 "SQLite",
                 "Animator"
         };
-        textString2 = new String[]{
-                "SharePreferences and file",
+        targetDescs = new String[]{
+                "SharePreferences",
+                "File",
                 "SQLite and SQLiteOpenHelper",
                 "ClipDrawable, AnimationDrawable, Animator使用"
         };
 
-
-        listView = (ListView) findViewById(R.id.listview1);
+        ListView listView = (ListView) findViewById(R.id.listview);
         ListViewAdapter listViewAdapter = new ListViewAdapter();
         listView.setAdapter(listViewAdapter);
         listView.setOnItemClickListener(new OnItemClickListener() {
@@ -60,20 +60,20 @@ public class StorageActivity extends Activity {
                 System.out.println("clicked" + position + " id:" + id);
                 switch (position) {
                     case 0:
-                        intent = new Intent(StorageActivity.this,
-                                SharePreferencesFileActivity.class);
+                        targetIntent = new Intent(StorageActivity.this, SharePreferencesFileActivity.class);
                         // 图片资源打包成流，随intent一同发送至目的组件
-                        intent.putExtra("bitmapScreenshot", BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
-                        startActivity(intent);
+                        targetIntent.putExtra("bitmapScreenshot", BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+                        startActivity(targetIntent);
                         break;
                     case 1:
-                        intent = new Intent(StorageActivity.this,
-                                SQLiteActivity.class);
-                        startActivity(intent);
+                        targetIntent = new Intent(StorageActivity.this, SQLiteActivity.class);
+                        startActivity(targetIntent);
                         break;
                     case 2:
-                        intent = new Intent(StorageActivity.this, DrawableTest.class);
-                        startActivity(intent);
+                        targetIntent = new Intent(StorageActivity.this, DrawableTest.class);
+                        startActivity(targetIntent);
+                        break;
+                    case 3:
                         break;
                     default:
                         break;
@@ -83,6 +83,7 @@ public class StorageActivity extends Activity {
 
     }
 
+    // ListView中item的复用
     public class ListViewAdapter extends BaseAdapter {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
@@ -106,9 +107,9 @@ public class StorageActivity extends Activity {
                 TextView textview1 = new TextView(StorageActivity.this);
                 TextView textview2 = new TextView(StorageActivity.this);
                 textview1.setTag("textView1");
-                textview1.setText(text1[position]);
+                textview1.setText(targetNames[position]);
                 textview2.setTag("textView2");
-                textview2.setText(textString2[position]);
+                textview2.setText(targetDescs[position]);
                 textview1.setTextSize(20);
                 textview2.setTextSize(20);
                 textview1.setTextColor(Color.RED);
@@ -125,19 +126,18 @@ public class StorageActivity extends Activity {
 
                 holder = (Holder) convertView.getTag();
                 // 修改之前保存的组件的内容，从而达到改变view的内容
-                holder.textView1.setText(text1[position]);
-                holder.textView2.setText(textString2[position]);
+                holder.textView1.setText(targetNames[position]);
+                holder.textView2.setText(targetDescs[position]);
                 return convertView;
 
                 // 此方法依据先找到组件，再修改组件内容
 //                layout = (LinearLayout) convertView;
 //                TextView textView1 = (TextView)layout.findViewWithTag("textView1");
-//                textView1.setText(text1[position]);
+//                textView1.setText(targetNames[position]);
 //                TextView textView2 = (TextView)layout.findViewWithTag("textView2");
-//                textView2.setText(textString2[position]);
+//                textView2.setText(targetDescs[position]);
 
             }
-
             return layout;
         }
 
@@ -161,7 +161,7 @@ public class StorageActivity extends Activity {
         @Override
         public int getCount() {
             // TODO Auto-generated method stub
-            return text1.length;
+            return targetNames.length;
         }
     }
 
@@ -169,4 +169,5 @@ public class StorageActivity extends Activity {
     public void onDestroy() {
         super.onDestroy();
     }
+
 }
