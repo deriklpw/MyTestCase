@@ -54,7 +54,7 @@
             android:name=".storage.sqlite.SQLiteActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".storage.filesharepre.SharePreferencesFileActivity"
+            android:name=".storage.filesharepre.SharePreferencesActivity"
             android:label="@string/app_name" />
 
         <provider
@@ -160,9 +160,11 @@
         <activity android:name=".net.async.AsyncTaskTestActivity" />
         <activity android:name=".views.PercentLayoutActivity" />
         <activity android:name=".MultiMediaActivity" />
-        <activity android:name=".others.MultiProcessActivity"
-            android:process="multi.process"/>
+        <activity
+            android:name=".others.MultiProcessActivity"
+            android:process="multi.process" />
         <activity android:name=".NativesActivity" />
+        <activity android:name=".storage.filesharepre.FileOperateActivity"></activity>
     </application>
 
 </manifest>

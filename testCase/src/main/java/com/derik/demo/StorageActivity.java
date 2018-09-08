@@ -17,7 +17,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.derik.demo.storage.DrawableTest;
-import com.derik.demo.storage.filesharepre.SharePreferencesFileActivity;
+import com.derik.demo.storage.filesharepre.FileOperateActivity;
+import com.derik.demo.storage.filesharepre.SharePreferencesActivity;
 import com.derik.demo.storage.sqlite.SQLiteActivity;
 import com.derik.library.utils.BitmapTools;
 
@@ -60,20 +61,24 @@ public class StorageActivity extends Activity {
                 System.out.println("clicked" + position + " id:" + id);
                 switch (position) {
                     case 0:
-                        targetIntent = new Intent(StorageActivity.this, SharePreferencesFileActivity.class);
+                        targetIntent = new Intent(StorageActivity.this, SharePreferencesActivity.class);
+                        startActivity(targetIntent);
+                        break;
+                    case 1:
+                        targetIntent = new Intent(StorageActivity.this, FileOperateActivity.class);
                         // 图片资源打包成流，随intent一同发送至目的组件
                         targetIntent.putExtra("bitmapScreenshot", BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
                         startActivity(targetIntent);
                         break;
-                    case 1:
+                    case 2:
                         targetIntent = new Intent(StorageActivity.this, SQLiteActivity.class);
                         startActivity(targetIntent);
                         break;
-                    case 2:
+                    case 3:
                         targetIntent = new Intent(StorageActivity.this, DrawableTest.class);
                         startActivity(targetIntent);
                         break;
-                    case 3:
+                    case 4:
                         break;
                     default:
                         break;

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".storage.filesharepre.FileOperateActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/internal_files"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="internal files"/>
+
+    <Button
+        android:id="@+id/internal_cache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="internal cache"/>
+
+    <Button
+        android:id="@+id/internal_app_dir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="internal app_dir"/>
+
+    <Button
+        android:id="@+id/external_sdcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="external sdcard"/>
+
+    <Button
+        android:id="@+id/external_public"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="external public"/>
+
+    <Button
+        android:id="@+id/external_private"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="external private"/>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
