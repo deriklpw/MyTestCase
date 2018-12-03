@@ -5,6 +5,7 @@
 
     <!-- 添加接收方属性中要求的权限后，才可以给对方发送广播 -->
     <uses-permission android:name="com.android.mypermission.send" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />

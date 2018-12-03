@@ -7,17 +7,19 @@
         android:fromAlpha="0.5"
         android:toAlpha="1.0"/>
 
-    <!-- 缩放变化： 1.0 表示无变化， 2.0 表示放大一倍， 0.5 表示缩小一倍-->
+    <!-- 缩放变化： 1.0 表示无变化， 2.0 表示放大一倍， 0.5 表示缩小一倍 -->
+    <!-- 缩放中心： 50%p，表示父组件的中心，50%，表示自己的中心 -->
+    <!-- %(view中的占比)，或%p(view+parent一起中的占比) -->
     <scale
         android:fromXScale="0.5"
         android:toXScale="1.5"
         android:fromYScale="0.5"
         android:toYScale="1.5"
-        android:pivotX="50%"
+        android:pivotX="50%p"
         android:pivotY="50%p"
         android:fillAfter="true"/>
 
-    <!-- 移位变化：数值(px)，%(view中的占比)，或%p(view+parent一起中的占比) -->
+    <!-- 移位变化：数值(px) -->
     <translate
         android:fromXDelta="10"
         android:toXDelta="130"
@@ -28,7 +30,7 @@
     <rotate
         android:fromDegrees="0"
         android:toDegrees="720"
-        android:pivotX="50%"
+        android:pivotX="50%p"
         android:pivotY="50%p"/>
 
 </set>

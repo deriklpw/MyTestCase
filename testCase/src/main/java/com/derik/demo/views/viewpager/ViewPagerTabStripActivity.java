@@ -145,6 +145,8 @@ public class ViewPagerTabStripActivity extends Activity {
             Button bt = new Button(this);
             bt.setLayoutParams(new ViewGroup.LayoutParams(bitmap.getWidth(), bitmap.getHeight()));
             bt.setBackgroundResource(R.drawable.right);
+            bt.setWidth(3);
+            bt.setHeight(3);
             layoutDot.addView(bt);
         }
 

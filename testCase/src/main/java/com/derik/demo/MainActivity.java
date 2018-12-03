@@ -103,4 +103,13 @@ public class MainActivity extends Activity {
         return true;
     }
 
+//    public void triggerDrawOverlaysPermission() {
+//        if (Utils.isAndroidM()) {
+//            if (!Settings.canDrawOverlays(getContext())) {
+//                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+//                getContext().startActivity(intent);
+//            }
+//        }
+//    }
+
 }
