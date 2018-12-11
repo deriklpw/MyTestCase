@@ -8,22 +8,27 @@ android {
         applicationId "com.derik.demo"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_7
-            targetCompatibility JavaVersion.VERSION_1_7
-        }
+
+        versionCode 1
+        versionName "1.00.00"
+
+        //多渠道打包的维度
+        flavorDimensions 'versionCode'
+
+        //多渠道打包Value的默认值
+        manifestPlaceholders = [ CHANNEL_VALUE:"default" ]
 
     }
 
     // 签名配置
-//    signingConfigs {
-//        release {
-//            storeFile file("test.jks")
-//            storePassword "123456"
-//            keyAlias "test"
-//            keyPassword "123456"
-//        }
-//    }
+    signingConfigs {
+        release {
+            storeFile file("test.jks")
+            storePassword "123456"
+            keyAlias "test"
+            keyPassword "123456"
+        }
+    }
 
     // 忽略错误
     lintOptions {
@@ -31,24 +36,29 @@ android {
     }
 
     // 多渠道打包配置
-//    defaultConfig {
-//        manifestPlaceholders = [ CHANNEL_VALUE:"yanbober" ]
-//    }
-//    productFlavors {
-//        yanbober{}
-//        wandoujia{}
-//        xiaomi{}
-//        baidu{}
-//    }
-//    productFlavors.all { flavor ->
-//        flavor.manifestPlaceholders = [ CHANNEL_VALUE:name ]
-//    }
+    productFlavors {
+        //单独渠道的Value
+//        xiaomi {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+//        }
+
+        //批量
+        yanbober{}
+        wandoujia{}
+        xiaomi{}
+        baidu{}
+
+    }
+    productFlavors.all { flavor ->
+        //批量,所有的都用名字当作Value
+        flavor.manifestPlaceholders = [ CHANNEL_VALUE:name ]
+    }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-//            signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
         }
 
         externalNativeBuild {
@@ -57,6 +67,22 @@ android {
             }
         }
 
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    //修改生成的apk名字
+    applicationVariants.all { variant ->
+        if (variant.buildType.name.equals('release') || variant.buildType.name.equals('debug')) {
+            variant.outputs.all {
+                def appName = archivesBaseName
+//                def fileName = appName + "${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
+                def fileName = appName + "-${variant.buildType.name}-V${defaultConfig.versionName}-${variant.productFlavors[0].name}.apk"
+                outputFileName = fileName
+            }
+        }
     }
 
 }

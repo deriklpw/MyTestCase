@@ -58,6 +58,7 @@ public class FileOperateActivity extends Activity implements View.OnClickListene
 
     private void showDirs() {
         StringBuilder buff = new StringBuilder();
+
         buff.append("Environment.getRootDirectory(): " + Environment.getRootDirectory().getAbsolutePath() + "\n");
         buff.append("Environment.getDataDirectory(): " + Environment.getDataDirectory().getAbsolutePath() + "\n");
         buff.append("Environment.getDownloadCacheDirectory(): " + Environment.getDownloadCacheDirectory().getAbsolutePath() + "\n");
@@ -69,10 +70,15 @@ public class FileOperateActivity extends Activity implements View.OnClickListene
         buff.append("getDir(\"getDir\", MODE_PRIVATE): " + getDir("getDir", MODE_PRIVATE).getAbsolutePath() + "\n");
         buff.append("getDatabasePath(\"database\"): " + getDatabasePath("db").getAbsolutePath() + "\n\n");
 
+        //外部SD卡Android目录下，私有
         //external private
         buff.append("getExternalFilesDir(\"aa\"): " + getExternalFilesDir("aa") + "\n"); //private
+        buff.append("getExternalFilesDir(\"\"): " + getExternalFilesDir("") + "\n"); //private
+        buff.append("getExternalCacheDir(): " + getExternalCacheDir() + "\n"); //private
+        buff.append("getExternalFilesDir(String type): " + getExternalFilesDir(Environment.DIRECTORY_PICTURES) + "\n"); //private
         buff.append("getObbDir(): " + getObbDir() + "\n\n");
 
+        //外部SD卡根目录下，共有
         //external public
         buff.append("Environment.getExternalStoragePublicDirectory(): "
                 + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC).getAbsolutePath() + "\n");
@@ -95,6 +101,7 @@ public class FileOperateActivity extends Activity implements View.OnClickListene
         buff.append("Environment.getExternalStoragePublicDirectory(): "
                 + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).getAbsolutePath() + "\n");
 
+        Log.d(TAG, "showDirs: " + buff.toString());
         content.setText(buff.toString());
 
     }
